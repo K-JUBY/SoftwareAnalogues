@@ -1,0 +1,13 @@
+.root {
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-font-size: 14px;
+}
+
+.screen-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+.muted {
+    -fx-text-fill: #5f6368;
+}

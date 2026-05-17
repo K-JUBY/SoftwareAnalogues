@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+
+<VBox alignment="CENTER" spacing="12" stylesheets="@../css/application.css"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.coursework.softwareanalogues.controller.RegisterController"
+      prefWidth="420" prefHeight="350">
+    <padding>
+        <Insets top="18" right="32" bottom="18" left="32" />
+    </padding>
+
+    <HBox spacing="8" alignment="CENTER_RIGHT" maxWidth="Infinity">
+        <Label text="%language.select" />
+        <ComboBox fx:id="languageComboBox" prefWidth="110" focusTraversable="false" />
+    </HBox>
+
+    <Label styleClass="screen-title" text="%register.title" />
+    <TextField fx:id="usernameField" promptText="%register.username" />
+    <PasswordField fx:id="passwordField" promptText="%register.password" />
+    <PasswordField fx:id="confirmPasswordField" promptText="%register.confirmPassword" onAction="#onRegister" />
+    
+    <HBox spacing="8" alignment="CENTER">
+        <Button fx:id="registerButton" HBox.hgrow="ALWAYS" maxWidth="Infinity" onAction="#onRegister" text="%register.button" />
+        <Button HBox.hgrow="ALWAYS" maxWidth="Infinity" onAction="#onCancel" text="%button.cancel" />
+    </HBox>
+</VBox>

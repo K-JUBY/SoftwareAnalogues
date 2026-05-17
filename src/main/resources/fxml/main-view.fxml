@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane stylesheets="@../css/application.css" xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.coursework.softwareanalogues.controller.MainController">
+    <top>
+        <VBox spacing="12">
+            <padding>
+                <Insets top="16" right="16" bottom="8" left="16" />
+            </padding>
+            <HBox alignment="CENTER_LEFT" spacing="8">
+                <Label styleClass="screen-title" text="%catalog.title" />
+                <Label text="%catalog.user" />
+                <Label fx:id="userLabel" styleClass="muted" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Label text="%language.select" />
+                <ComboBox fx:id="languageComboBox" prefWidth="150" />
+                <Button onAction="#onLogout" text="%button.logout" />
+            </HBox>
+            <HBox spacing="8">
+                <TextField fx:id="queryField" HBox.hgrow="ALWAYS" promptText="%catalog.search" />
+                <ComboBox fx:id="categoryComboBox" prefWidth="190" />
+                <ComboBox fx:id="licenseComboBox" prefWidth="150" />
+                <Button onAction="#onAddSoftware" text="%software.add" />
+                <Button onAction="#onEditSoftware" text="%software.edit" />
+                <Button onAction="#onDeleteSoftware" text="%software.delete" />
+                <Button onAction="#onOpenCollections" text="%collections.title" />
+                <Button onAction="#onOpenReports" text="%reports.title" />
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <TableView fx:id="softwareTable">
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+            <columns>
+                <TableColumn fx:id="titleColumn" prefWidth="260" text="%software.title" />
+                <TableColumn fx:id="categoryColumn" prefWidth="160" text="%software.category" />
+                <TableColumn fx:id="developerColumn" prefWidth="180" text="%software.developer" />
+                <TableColumn fx:id="licenseColumn" prefWidth="100" text="%software.license" />
+                <TableColumn fx:id="ratingColumn" prefWidth="100" text="%software.rating" />
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>
